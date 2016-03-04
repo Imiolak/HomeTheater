@@ -1,0 +1,8 @@
+﻿<Window x:Class="HomeTheaterGUI.Windows.HomeTheaterMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Home Theater" Height="350" Width="525">
+    <Grid>
+        <StackPanel Name="Buttons"></StackPanel>
+    </Grid>
+</Window>

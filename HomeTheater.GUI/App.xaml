@@ -1,0 +1,8 @@
+﻿<Application x:Class="HomeTheaterGUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Windows/HomeTheaterMain.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

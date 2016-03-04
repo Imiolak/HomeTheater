@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTheater.Common", "HomeTheater.Common\HomeTheater.Common.csproj", "{6F0110F6-2D4A-4469-9EB9-6F83CCA9212B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTheater.GUI", "HomeTheater.GUI\HomeTheater.GUI.csproj", "{8F7E061A-2E20-43A3-9296-2B1D555F6761}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTheater.Camera", "HomeTheater.Camera\HomeTheater.Camera.csproj", "{4063782C-4000-4FD4-BFF1-827645F26715}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F0110F6-2D4A-4469-9EB9-6F83CCA9212B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F0110F6-2D4A-4469-9EB9-6F83CCA9212B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F0110F6-2D4A-4469-9EB9-6F83CCA9212B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F0110F6-2D4A-4469-9EB9-6F83CCA9212B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F7E061A-2E20-43A3-9296-2B1D555F6761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F7E061A-2E20-43A3-9296-2B1D555F6761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F7E061A-2E20-43A3-9296-2B1D555F6761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F7E061A-2E20-43A3-9296-2B1D555F6761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4063782C-4000-4FD4-BFF1-827645F26715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4063782C-4000-4FD4-BFF1-827645F26715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4063782C-4000-4FD4-BFF1-827645F26715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4063782C-4000-4FD4-BFF1-827645F26715}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
