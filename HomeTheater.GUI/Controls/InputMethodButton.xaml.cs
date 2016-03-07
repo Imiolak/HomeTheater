@@ -3,7 +3,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using HomeTheater.Common.Input;
 
-namespace HomeTheaterGUI.Controls
+namespace HomeTheater.GUI.Controls
 {
     /// <summary>
     /// Interaction logic for InputMethodButton.xaml

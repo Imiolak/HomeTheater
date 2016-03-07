@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace HomeTheaterGUI.Controls
+namespace HomeTheater.GUI.Controls
 {
     /// <summary>
     /// Interaction logic for InputMethodButtonGroup.xaml

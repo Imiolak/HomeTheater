@@ -2,17 +2,17 @@
 using HomeTheater.Common.Driver.Video;
 using HomeTheater.Common.Input;
 
-namespace HomeTheater.Camera.Input
+namespace HomeTheater.Kinect.Input
 {
-    public class CameraInput : InputBase, IInputMethod
+    public class KinectInput : InputBase, IInputMethod
     {
-        public CameraInput(IAudioDriver audioDriver, IVideoDriver videoDriver) : base(audioDriver, videoDriver) { }
+        public KinectInput(IAudioDriver audioDriver, IVideoDriver videoDriver) : base(audioDriver, videoDriver) { }
 
         public bool Available => false;
 
         public bool Active { get; private set; }
 
-        public string Description => "Camera";
+        public string Description => "Kinect";
 
         public void Start()
         {
@@ -23,7 +23,5 @@ namespace HomeTheater.Camera.Input
         {
             Active = false;
         }
-
-        
     }
 }

@@ -1,4 +1,4 @@
-﻿<Window x:Class="HomeTheaterGUI.Windows.HomeTheaterMain"
+﻿<Window x:Class="HomeTheater.GUI.Windows.HomeTheaterMain"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Home Theater" Height="350" Width="525">

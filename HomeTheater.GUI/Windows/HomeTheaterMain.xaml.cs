@@ -1,9 +1,11 @@
 ﻿using System.Windows;
 using HomeTheater.Camera.Input;
-using HomeTheaterGUI.Controls;
-using HomeTheaterGUI.Input;
+using HomeTheater.Common.Driver;
+using HomeTheater.GUI.Controls;
+using HomeTheater.GUI.Input;
+using HomeTheater.Kinect.Input;
 
-namespace HomeTheaterGUI.Windows
+namespace HomeTheater.GUI.Windows
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -14,9 +16,13 @@ namespace HomeTheaterGUI.Windows
         {
             InitializeComponent();
 
+            var audioDriver = DriverProvider.GetAudioDriver();
+            var videoDriver = DriverProvider.GetVideoDriver();
+
             Buttons.Children.Add(new InputMethodButtonGroup(
-                new InputMethodButton(new GuiInput()),
-                new InputMethodButton(new CameraInput())
+                new InputMethodButton(new GuiInput(audioDriver, videoDriver)),
+                new InputMethodButton(new CameraInput(audioDriver, videoDriver)),
+                new InputMethodButton(new KinectInput(audioDriver, videoDriver))
             ));
         }
     }

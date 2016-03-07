@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTheater.Common", "HomeTheater.Common\HomeTheater.Common.csproj", "{6F0110F6-2D4A-4469-9EB9-6F83CCA9212B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTheater.GUI", "HomeTheater.GUI\HomeTheater.GUI.csproj", "{8F7E061A-2E20-43A3-9296-2B1D555F6761}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTheater.Camera", "HomeTheater.Camera\HomeTheater.Camera.csproj", "{4063782C-4000-4FD4-BFF1-827645F26715}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTheater.Kinect", "HomeTheater.Kinect\HomeTheater.Kinect.csproj", "{813BC8F9-F69A-4C45-90E0-27825497741B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,10 @@ Global
 		{4063782C-4000-4FD4-BFF1-827645F26715}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4063782C-4000-4FD4-BFF1-827645F26715}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4063782C-4000-4FD4-BFF1-827645F26715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{813BC8F9-F69A-4C45-90E0-27825497741B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{813BC8F9-F69A-4C45-90E0-27825497741B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{813BC8F9-F69A-4C45-90E0-27825497741B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{813BC8F9-F69A-4C45-90E0-27825497741B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
