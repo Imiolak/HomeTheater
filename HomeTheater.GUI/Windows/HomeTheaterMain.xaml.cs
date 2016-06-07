@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using HomeTheater.Camera.Input;
+using HomeTheater.Common.Controllers;
 using HomeTheater.Common.Driver;
 using HomeTheater.GUI.Controls;
 using HomeTheater.GUI.Input;
@@ -18,11 +19,14 @@ namespace HomeTheater.GUI.Windows
 
             var audioDriver = DriverProvider.GetAudioDriver();
             var videoDriver = DriverProvider.GetVideoDriver();
+            var panelController = new PanelController(InputPanel, DebugPanel);
 
-            Buttons.Children.Add(new InputMethodButtonGroup(
-                new InputMethodButton(new GuiInput(audioDriver, videoDriver)),
-                new InputMethodButton(new CameraInput(audioDriver, videoDriver)),
-                new InputMethodButton(new KinectInput(audioDriver, videoDriver))
+            Configuration.Children.Add(new OnOffButton());
+
+            InputMethodsButton.Children.Add(new InputMethodButtonGroup(
+                new InputMethodButton(new GuiInput(audioDriver, videoDriver), panelController),
+                new InputMethodButton(new CameraInput(audioDriver, videoDriver), panelController),
+                new InputMethodButton(new KinectInput(audioDriver, videoDriver), panelController)
             ));
         }
     }

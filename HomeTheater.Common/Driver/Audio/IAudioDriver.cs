@@ -2,5 +2,13 @@
 {
     public interface IAudioDriver
     {
+        void Mute();
+        void VolumeDown();
+        void VolumeUp();
+
+        void NextTrack();
+        void PreviousTrack();
+        void Stop();
+        void PlayPause();
     }
 }

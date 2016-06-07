@@ -7,7 +7,7 @@ namespace HomeTheater.Common.Driver
     {
         public static IAudioDriver GetAudioDriver()
         {
-            return new NullAudioDriver();
+            return new AudioDriver();
         }
 
         public static IVideoDriver GetVideoDriver()

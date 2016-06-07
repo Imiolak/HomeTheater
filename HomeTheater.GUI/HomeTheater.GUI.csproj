@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,6 +63,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\OnOffButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panels\GUIInputPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\HomeTheaterMain.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,7 +85,13 @@
     <Compile Include="Controls\InputMethodButtonGroup.xaml.cs">
       <DependentUpon>InputMethodButtonGroup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\OnOffButton.xaml.cs">
+      <DependentUpon>OnOffButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Input\GUIInput.cs" />
+    <Compile Include="Panels\GUIInputPanel.xaml.cs">
+      <DependentUpon>GUIInputPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\HomeTheaterMain.xaml.cs">
       <DependentUpon>HomeTheaterMain.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -1,6 +1,7 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using HomeTheater.Common.Controllers;
 using HomeTheater.Common.Input;
 
 namespace HomeTheater.GUI.Controls
@@ -11,10 +12,13 @@ namespace HomeTheater.GUI.Controls
     public partial class InputMethodButton : UserControl
     {
         private readonly IInputMethod _inputMethod;
+        private readonly PanelController _panelController;
 
-        public InputMethodButton(IInputMethod inputMethod)
+        public InputMethodButton(IInputMethod inputMethod, PanelController panelController)
         {
             _inputMethod = inputMethod;
+            _panelController = panelController;
+
             Text = _inputMethod.Description;
             IsEnabled = _inputMethod.Available;
 
@@ -23,21 +27,23 @@ namespace HomeTheater.GUI.Controls
 
         public string Text { get; set; }
 
-        public bool Selected
-        {
-            get { return _inputMethod.Active; }
-        } 
+        public bool Selected => _inputMethod.Active;
 
         private void Select()
         {
             StatusIndicator.Fill = new SolidColorBrush(Colors.Green);
+
             _inputMethod.Start();
+            _panelController.SetInputPanel(_inputMethod.InputPanel);
+            _panelController.SetDebugPanel(_inputMethod.DebugPanel);
         }
 
         private void Deselect()
         {
             StatusIndicator.Fill = new SolidColorBrush(Colors.Red);
+
             _inputMethod.Stop();
+            _panelController.ClearPanels();
         }
 
         private void Toggle(object sender, MouseButtonEventArgs e)

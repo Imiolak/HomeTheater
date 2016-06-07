@@ -3,6 +3,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Home Theater" Height="350" Width="525">
     <Grid>
-        <StackPanel Name="Buttons"></StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Grid.Row="0" Grid.Column="0" Header="Configuration">
+            <StackPanel Name="Configuration"/>
+        </GroupBox>
+
+        <StackPanel Name="InputMethodsButton" Grid.Row="0" Grid.Column="1">
+        </StackPanel>
+
+        <GroupBox Header="Input Panel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <StackPanel Name="InputPanel" Height="Auto" Width="Auto"/>
+        </GroupBox>
+
+        <GroupBox Header="Debug Panel" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+            <StackPanel Name="DebugPanel" Height="Auto" Width="Auto"/>
+        </GroupBox>
+        
     </Grid>
 </Window>
