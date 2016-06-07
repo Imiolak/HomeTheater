@@ -15,20 +15,18 @@ namespace HomeTheater.Common.Controllers
 
         public void SetInputPanel(UserControl inputPanel)
         {
-            _inputPanel.Children.Clear();
             _inputPanel.Children.Add(inputPanel);
         }
 
         public void SetDebugPanel(UserControl debugPanel)
         {
-            _debugPanel.Children.Clear();
             _debugPanel.Children.Add(debugPanel);
         }
 
-        public void ClearPanels()
+        public void RemovePanels(UserControl inputPanel, UserControl debugPanel)
         {
-            _inputPanel.Children.Clear();
-            _debugPanel.Children.Clear();
+            _inputPanel.Children.Remove(inputPanel);
+            _debugPanel.Children.Remove(debugPanel);
         }
     }
 }

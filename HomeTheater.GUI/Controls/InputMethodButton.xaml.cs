@@ -43,7 +43,7 @@ namespace HomeTheater.GUI.Controls
             StatusIndicator.Fill = new SolidColorBrush(Colors.Red);
 
             _inputMethod.Stop();
-            _panelController.ClearPanels();
+            _panelController.RemovePanels(_inputMethod.InputPanel, _inputMethod.DebugPanel);
         }
 
         private void Toggle(object sender, MouseButtonEventArgs e)

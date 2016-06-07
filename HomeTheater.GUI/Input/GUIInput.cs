@@ -12,6 +12,8 @@ namespace HomeTheater.GUI.Input
         public GuiInput(IAudioDriver audioDriver, IVideoDriver videoDriver)
             : base(audioDriver, videoDriver)
         {
+            InputPanel = new GUIInputPanel(AudioDriver, VideoDriver);
+            DebugPanel = new EmptyUserControl();
         }
 
         public bool Available => true;
@@ -20,9 +22,9 @@ namespace HomeTheater.GUI.Input
 
         public string Description => "GUI";
 
-        public UserControl InputPanel => new GUIInputPanel(AudioDriver, VideoDriver);
+        public UserControl InputPanel { get; }
 
-        public UserControl DebugPanel => new EmptyUserControl();
+        public UserControl DebugPanel { get; }
 
         public void Start()
         {
