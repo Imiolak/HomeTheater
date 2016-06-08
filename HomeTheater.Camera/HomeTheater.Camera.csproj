@@ -91,8 +91,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\RectangleExtensions.cs" />
     <Compile Include="Image\CameraCapture.cs" />
     <Compile Include="Image\FrameInterpreter.cs" />
+    <Compile Include="Image\GestureParser.cs" />
     <Compile Include="Input\CameraInput.cs" />
     <Compile Include="Panels\CameraDebugPanel.xaml.cs">
       <DependentUpon>CameraDebugPanel.xaml</DependentUpon>
