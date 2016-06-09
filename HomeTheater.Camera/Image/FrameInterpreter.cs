@@ -1,8 +1,10 @@
 ﻿using System.Drawing;
 using System.Linq;
 using Emgu.CV;
+using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using HomeTheater.Camera.Extensions;
+using HomeTheater.Camera.Gesture;
 
 namespace HomeTheater.Camera.Image
 {
@@ -21,7 +23,7 @@ namespace HomeTheater.Camera.Image
 
         public Mat Process(Mat frame)
         {
-            var imageFrame = frame.ToImage<Bgr, byte>();
+            var imageFrame = frame.ToImage<Bgr, byte>().Flip(FlipType.Horizontal);
             var grayFrame = imageFrame.Convert<Gray, byte>();
 
             var openPalmHaar = new CascadeClassifier(OpenPalmHaarFilePath);
@@ -35,15 +37,21 @@ namespace HomeTheater.Camera.Image
             if ((anyOpenPalm && anyClosedPalm) 
                 || (!anyOpenPalm && !anyClosedPalm))
             {
-                _parser.ParseNext(Gesture.None, new Point());
+                _parser.ParseNext(Gesture.Gesture.None);
             }
             else if (anyOpenPalm)
             {
-                _parser.ParseNext(Gesture.OpenPalm, openPalms[0].Center());
+                _parser.ParseNext(Gesture.Gesture.OpenPalm, 
+                    openPalms[0].Center().X / (double)imageFrame.Width,
+                    openPalms[0].Center().Y / (double)imageFrame.Height);
+                imageFrame.Draw(openPalms[0], new Bgr(Color.Green));
             }
             else 
             {
-                _parser.ParseNext(Gesture.ClosedPalm, closedPalms[0].Center());
+                _parser.ParseNext(Gesture.Gesture.ClosedPalm,
+                    closedPalms[0].Center().X / (double)imageFrame.Width,
+                    closedPalms[0].Center().Y / (double)imageFrame.Height);
+                imageFrame.Draw(closedPalms[0], new Bgr(Color.Blue));
             }
 
             return imageFrame.Mat;

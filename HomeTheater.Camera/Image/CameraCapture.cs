@@ -1,6 +1,5 @@
 ﻿using System;
 using Emgu.CV;
-using Emgu.CV.Structure;
 using HomeTheater.Camera.Panels;
 
 namespace HomeTheater.Camera.Image

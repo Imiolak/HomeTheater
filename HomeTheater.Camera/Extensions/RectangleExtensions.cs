@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using Emgu.CV.CvEnum;
 
 namespace HomeTheater.Camera.Extensions
 {
@@ -9,8 +8,8 @@ namespace HomeTheater.Camera.Extensions
         public static Point Center(this Rectangle rectangle)
         {
             return new Point(
-                Math.Abs(rectangle.Left - rectangle.Right),
-                Math.Abs(rectangle.Top - rectangle.Bottom));
+                rectangle.Right - (Math.Abs(rectangle.Left - rectangle.Right) / 2),
+                rectangle.Bottom - (Math.Abs(rectangle.Top - rectangle.Bottom) / 2));
         }
     }
 }

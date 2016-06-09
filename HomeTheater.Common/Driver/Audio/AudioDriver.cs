@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Windows.Interop;
-using Application = System.Windows.Application;
 
 namespace HomeTheater.Common.Driver.Audio
 {
@@ -12,34 +10,26 @@ namespace HomeTheater.Common.Driver.Audio
         private const int VK_MEDIA_PREV_TRACK = 0xB1;
         private const int VK_MEDIA_STOP = 0xB2;
         private const int VK_MEDIA_PLAY_PAUSE = 0xB3;
-        
-        private const uint WM_APPCOMMAND = 0x319;
-        private const int APPCOMMAND_VOLUME_MUTE = 0x80000;
-        private const int APPCOMMAND_VOLUME_DOWN = 0x90000;
-        private const int APPCOMMAND_VOLUME_UP = 0xA0000;
+        private const int VK_VOLUME_MUTE = 0xAD;
+        private const int VK_VOLUME_DOWN = 0xAE;
+        private const int VK_VOLUME_UP = 0xAF;
 
         [DllImport("user32.dll")]
         public static extern void keybd_event(byte virtualKey, byte scanCode, uint flags, IntPtr extraInfo);
 
-        [DllImport("user32.dll")]
-        public static extern IntPtr SendMessageW(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
-
         public void Mute()
         {
-            var handle = GetHandle();
-            SendMessageW(handle, WM_APPCOMMAND, handle, (IntPtr)APPCOMMAND_VOLUME_MUTE);
+            keybd_event(VK_VOLUME_MUTE, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
         }
 
         public void VolumeDown()
         {
-            var handle = GetHandle();
-            SendMessageW(handle, WM_APPCOMMAND, handle, (IntPtr)APPCOMMAND_VOLUME_DOWN);
+            keybd_event(VK_VOLUME_DOWN, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
         }
 
         public void VolumeUp()
         {
-            var handle = GetHandle();
-            SendMessageW(handle, WM_APPCOMMAND, handle, (IntPtr)APPCOMMAND_VOLUME_UP);
+            keybd_event(VK_VOLUME_UP, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
         }
 
         public void NextTrack()
@@ -60,11 +50,6 @@ namespace HomeTheater.Common.Driver.Audio
         public void PlayPause()
         {
             keybd_event(VK_MEDIA_PLAY_PAUSE, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
-        }
-
-        private IntPtr GetHandle()
-        {
-            return new WindowInteropHelper(Application.Current.MainWindow).Handle;
         }
     }
 }

@@ -92,9 +92,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\RectangleExtensions.cs" />
+    <Compile Include="Gesture\GestureHistory.cs" />
+    <Compile Include="Gesture\State\GestureInProgress.cs" />
+    <Compile Include="Gesture\State\Idle.cs" />
+    <Compile Include="Gesture\State\IState.cs" />
+    <Compile Include="Gesture\State\WaitingForGestureStart.cs" />
     <Compile Include="Image\CameraCapture.cs" />
     <Compile Include="Image\FrameInterpreter.cs" />
-    <Compile Include="Image\GestureParser.cs" />
+    <Compile Include="Gesture\GestureParser.cs" />
     <Compile Include="Input\CameraInput.cs" />
     <Compile Include="Panels\CameraDebugPanel.xaml.cs">
       <DependentUpon>CameraDebugPanel.xaml</DependentUpon>
@@ -121,6 +126,7 @@
   <ItemGroup>
     <Content Include="License-LGPL.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
