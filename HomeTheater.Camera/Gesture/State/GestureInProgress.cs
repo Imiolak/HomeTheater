@@ -29,7 +29,7 @@ namespace HomeTheater.Camera.Gesture.State
                     return new Idle();
                 case Gesture.OpenPalm:
                     GestureEnded(x, y);
-                    return new Idle();
+                    return new WaitingForGestureStart();
                 case Gesture.ClosedPalm:
                     return this;
                 default:
